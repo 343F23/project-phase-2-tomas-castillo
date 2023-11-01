@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Budgets - Personal Finance Tracker</title>
+    </head>
+    <body>
+        <header>Personal Finance Tracker</header>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="budgets.html">Budgets</a>
+            <a href="investments.html">Investments</a>
+            <a href="trends.html">Trends</a>
+        </nav>
+
+        <div class="container">
+            <h1>Budgets</h1>
+            <img src="images/budget.png" alt="Budgets Clip Art">
+            <h2>Add a Budget</h2>
+            <form>
+                <label for="budget-category">Spending Category:</label><br>
+                <input type="text" id="budget-category" name="budget-category"><br>
+                <label for="budget-amount">Limit:</label><br>
+                <input type="number" id="budget-amount" name="budget-amount" min="0" step="0.01"><br>
+                <input type="submit" value="Add Budget">
+            </form>
+
+            <h2>Spending Category (Total category sum / Limit)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Example 1</td>
+                            <td>$50</td>
+                            <td>10/29/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Example 2</td>
+                            <td>$400</td>
+                            <td>10/30/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Example 3</td>
+                            <td>$15</td>
+                            <td>10/31/2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Spending Category 2 (Total category sum / Limit)</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Example 1</td>
+                            <td>$50</td>
+                            <td>10/29/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Example 2</td>
+                            <td>$400</td>
+                            <td>10/30/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Example 3</td>
+                            <td>$15</td>
+                            <td>10/31/2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
