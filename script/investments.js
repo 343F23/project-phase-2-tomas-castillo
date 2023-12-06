@@ -134,7 +134,7 @@ function addInvestmentToTable(name, symbol, numberOfShares, date, index) {
 
     let deleteButton = document.createElement("img");
 
-    deleteButton.src = "../images/trash.png";
+    deleteButton.src = new URL("../images/trash.png");
     deleteButton.alt = "Delete";
     deleteButton.style.cursor = "pointer";
     deleteButton.classList.add("delete-button");
@@ -145,7 +145,7 @@ function addInvestmentToTable(name, symbol, numberOfShares, date, index) {
 
     let editButton = document.createElement("img");
 
-    editButton.src = "../images/edit.png";
+    editButton.src = new URL("../images/edit.png");
     editButton.alt = "Edit";
     editButton.style.cursor = "pointer";
     editButton.classList.add("edit-button");
