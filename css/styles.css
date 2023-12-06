@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    padding-top: 110px;
 }
 
 header {
@@ -11,14 +12,22 @@ header {
     padding: 10px 20px;
     text-align: center;
     font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-nav {
+.custom-nav {
     background-color: #444;
     overflow: hidden;
+    position: fixed;
+    top: 44px;
+    width: 100%;
+    z-index: 100;
 }
 
-nav a {
+.custom-nav a {
     float: left;
     color: white;
     text-align: center;
@@ -27,9 +36,14 @@ nav a {
     font-size: 17px;
 }
 
-nav a:hover {
+.custom-nav a:hover {
     background-color: #ddd;
     color: black;
+}
+
+.custom-nav a.active {
+    background-color: #666; /* Example color for the active link */
+    color: white;
 }
 
 .container {
@@ -37,6 +51,15 @@ nav a:hover {
     background-color: white;
     margin: 20px;
     font-family: serif;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .table-container {
@@ -78,6 +101,21 @@ form {
     flex-direction: column;
 }
 
+button {
+    background-color: #3aae3e;
+}
+
+.delete-button,
+.edit-button {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+td {
+    margin: auto;
+}
+
 form label,
 form input[type="text"],
 form input[type="number"],
@@ -100,6 +138,66 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+#alert-container {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch across the whole width */
+    z-index: 9999; /* Ensure it's above other elements */
+    display: flex;
+    /* align items vertically */
+    flex-direction: column; /* Stack the alerts vertically */
+    align-items: flex-end; /* Align the alerts to the right */
+    padding: 10px; /* Add some padding */
+    width: 100%;
+    pointer-events: none;
+}
+
+.alert {
+    width: 20%; /* Allow the alert to grow as needed */
+    margin-bottom: 5px; /* Remove default margin */
+    pointer-events: none;
+    user-select: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts the space between the two elements */
+}
+
+.flex-container > form,
+.flex-container > .card {
+    flex: 1; /* Allows both children to grow and take equal space */
+    margin: 0 10px; /* Adds some spacing between the form and the card */
+}
+
+.background-image {
+    /* Full width and height */
+    width: 100%;
+    height: calc(100% + 250px);
+
+    /* Background image is centered and covers the entire screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Set the opacity */
+    opacity: 0.1;
+
+    /* Position the background image container */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Ensures it is above all other content */
+    pointer-events: none;
+}
+
+a {
+    color: black; /* Replace with your desired color */
 }
 
 /* Formats nav bar vertically for smaller screen sizes */

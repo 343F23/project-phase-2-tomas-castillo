@@ -3,92 +3,87 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/budgets.css">
+        <script src="script/script.js"></script>
+        <script src="script/budgets.js"></script>
         <title>Budgets - Personal Finance Tracker</title>
     </head>
     <body>
         <header>Personal Finance Tracker</header>
 
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="transactions.html">Transactions</a>
-            <a href="budgets.html">Budgets</a>
-            <a href="investments.html">Investments</a>
-            <a href="trends.html">Trends</a>
+        <nav class="navbar navbar-expand-lg custom-nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="budgets.html">Budgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="investments.html">Investments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trends.html">Trends</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+
+        <div class="background-image"></div>
 
         <div class="container">
             <h1>Budgets</h1>
-            <img src="images/budget.png" alt="Budgets Clip Art">
-            <h2>Add a Budget</h2>
-            <form>
-                <label for="budget-category">Spending Category:</label><br>
-                <input type="text" id="budget-category" name="budget-category"><br>
-                <label for="budget-amount">Limit:</label><br>
-                <input type="number" id="budget-amount" name="budget-amount" min="0" step="0.01"><br>
-                <input type="submit" value="Add Budget">
-            </form>
-
-            <h2>Spending Category (Total category sum / Limit)</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Transaction Name</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Example 1</td>
-                            <td>$50</td>
-                            <td>10/29/2023</td>
-                        </tr>
-                        <tr>
-                            <td>Example 2</td>
-                            <td>$400</td>
-                            <td>10/30/2023</td>
-                        </tr>
-                        <tr>
-                            <td>Example 3</td>
-                            <td>$15</td>
-                            <td>10/31/2023</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Add a Budget</h2>
+                    <form id="budget-form">
+                        <div class="form-group">
+                            <label for="budget-category">Spending Category:</label>
+                            <input type="text" class="form-control" id="budget-category" name="budget-category">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget-amount">Limit:</label>
+                            <input type="number" class="form-control" id="budget-amount" name="budget-amount" min="0" step="0.01">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Add Budget</button>
+                    </form>
+                </div>
             </div>
 
-            <h2>Spending Category 2 (Total category sum / Limit)</h2>
+            <div class="edit-overlay" id="edit-overlay" style="display: none;">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Edit Budget</h2>
+                        <form id="edit-budget-form">
+                            <div class="form-group">
+                                <label for="edit-budget-category">Spending Category:</label>
+                                <input type="text" class="form-control" id="edit-budget-category" name="edit-budget-category">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-budget-amount">Limit:</label>
+                                <input type="number" class="form-control" id="edit-budget-amount" name="edit-budget-amount" min="0" step="0.01">
+                            </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Transaction Name</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Example 1</td>
-                            <td>$50</td>
-                            <td>10/29/2023</td>
-                        </tr>
-                        <tr>
-                            <td>Example 2</td>
-                            <td>$400</td>
-                            <td>10/30/2023</td>
-                        </tr>
-                        <tr>
-                            <td>Example 3</td>
-                            <td>$15</td>
-                            <td>10/31/2023</td>
-                        </tr>
-                    </tbody>
-                </table>
+                            <button type="button" class="btn btn-secondary" id="cancel-edit">Cancel</button>
+                            <button type="submit" class="btn btn-secondary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+
+            <h2>Spending Categories</h2>
+            <div id="spending-categories"></div>
+
+            <div id="alert-container"></div>
         </div>
     </body>
 </html>

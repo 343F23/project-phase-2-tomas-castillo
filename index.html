@@ -3,52 +3,95 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/dashboard.css">
+        <script src="script/script.js"></script>
+        <script src="script/dashboard.js"></script>
         <title>Dashboard - Personal Finance Tracker</title>
     </head>
     <body>
         <header>Personal Finance Tracker</header>
 
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="transactions.html">Transactions</a>
-            <a href="budgets.html">Budgets</a>
-            <a href="investments.html">Investments</a>
-            <a href="trends.html">Trends</a>
+        <nav class="navbar navbar-expand-lg custom-nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="budgets.html">Budgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="investments.html">Investments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trends.html">Trends</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+
+        <div class="background-image"></div>
 
         <div class="container">
             <h1>Dashboard</h1>
-            <img src="images/dashboard.png" alt="Dashboard Clip Art">
 
-            <section id="finance-tips">
-                <h2>Finance Tips</h2>
-                <ul>
-                    <li>Set clear financial goals to work towards.</li>
-                    <li>Create and stick to a budget to manage your spending.</li>
-                    <li>Invest wisely by diversifying your investment portfolio.</li>
-                    <li>Save for emergencies to cover at least three to six months of living expenses.</li>
-                    <li>Avoid bad debt and pay off high-interest debts as soon as possible.</li>
-                </ul>
-            </section>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Finance Tips</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Set clear financial goals to work towards.</li>
+                        <li class="list-group-item">Create and stick to a budget to manage your spending.</li>
+                        <li class="list-group-item">Invest wisely by diversifying your investment portfolio.</li>
+                        <li class="list-group-item">Save for emergencies to cover at least three to six months of living expenses.</li>
+                        <li class="list-group-item">Avoid bad debt and pay off high-interest debts as soon as possible.</li>
+                    </ul>
+                </div>
+            </div>
+            
 
-            <section id="external-resources">
-                <h2>Learn More</h2>
-                <ul>
-                    <li>
-                        <a href="https://www.investopedia.com/" target="_blank" rel="noopener noreferrer">Investopedia - Investing Education</a>
-                    </li>
-                    <li>
-                        <a href="https://www.khanacademy.org/college-careers-more/personal-finance" target="_blank" rel="noopener noreferrer">Khan Academy - Personal Finance</a>
-                    </li>
-                    <li>
-                        <a href="https://www.nerdwallet.com/blog/finance/how-to-build-a-budget/" target="_blank" rel="noopener noreferrer">NerdWallet - Budgeting Guide</a>
-                    </li>
-                    <li>
-                        <a href="https://www.bogleheads.org/wiki/Getting_started" target="_blank" rel="noopener noreferrer">Bogleheads - Getting Started with Investing</a>
-                    </li>
-                </ul>
-            </section>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Learn More</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="https://www.investopedia.com/" target="_blank" rel="noopener noreferrer">Investopedia - Investing Education</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.khanacademy.org/college-careers-more/personal-finance" target="_blank" rel="noopener noreferrer">Khan Academy - Personal Finance</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nerdwallet.com/blog/finance/how-to-build-a-budget/" target="_blank" rel="noopener noreferrer">NerdWallet - Budgeting Guide</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.bogleheads.org/wiki/Getting_started" target="_blank" rel="noopener noreferrer">Bogleheads - Getting Started with Investing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    User Data
+                </div>
+                <div class="card-body">
+                    <button id="exportBtn" class="btn btn-secondary">Export User Data</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear User Data</button>
+                </div>
+            </div>
+
+            <div id="alert-container"></div>
         </div>
     </body>
 </html>

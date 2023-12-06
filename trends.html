@@ -3,29 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/trends.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script/trends.js"></script>
+        <script src="script/script.js"></script>
         <title>Trends - Personal Finance Tracker</title>
     </head>
     <body>
         <header>Personal Finance Tracker</header>
 
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="transactions.html">Transactions</a>
-            <a href="budgets.html">Budgets</a>
-            <a href="investments.html">Investments</a>
-            <a href="trends.html">Trends</a>
+        <nav class="navbar navbar-expand-lg custom-nav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="budgets.html">Budgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="investments.html">Investments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="trends.html">Trends</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+
+        <div class="background-image"></div>
 
         <div class="container">
             <h1>Trends</h1>
-            <img src="images/trends.png" alt="Trends Clip Art">
-            <div id="investment-trends-graph">
-                <h2>Investment Trends</h2>
+            <div class="card" id="investment-trends-card">
+                <div class="card-header">
+                    <h2>Investment Trends</h2>
+                </div>
+                <div id="investment-trends-card-body"></div>
             </div>
 
-            <div id="budget-trends-graph">
-                <h2>Budget Trends</h2>
+            <div class="card" id="budget-trends-card">
+                <div class="card-header">
+                    <h2>Budget Trends</h2>
+                </div>
+                <div id="budget-trends-card-body"></div>
             </div>
         </div>
     </body>
