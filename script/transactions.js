@@ -154,7 +154,7 @@ function addTransactionToTable(name, amount, date, spendingCategory, index) {
 
     let deleteButton = document.createElement("img");
 
-    deleteButton.src = new URL("../images/trash.png");
+    deleteButton.src = "./images/trash.png";
     deleteButton.alt = "Delete";
     deleteButton.style.cursor = "pointer";
     deleteButton.classList.add("delete-button");
@@ -165,7 +165,7 @@ function addTransactionToTable(name, amount, date, spendingCategory, index) {
 
     let editButton = document.createElement("img");
 
-    editButton.src = new URL("../images/edit.png");
+    editButton.src = "./images/edit.png";
     editButton.alt = "Edit";
     editButton.style.cursor = "pointer";
     editButton.classList.add("edit-button");
